@@ -9,6 +9,8 @@ COPY src/ ./src/
 COPY include/ ./include/
 COPY generate_data.py .
 
+RUN mkdir data
+
 RUN python3 generate_data.py
 
 RUN g++ -I include/ -O3 main.cpp src/*.cpp -o inventory_sys
